@@ -16,7 +16,6 @@ The analysis consolidates location-level feedback, with a focus on **negative re
 - Perform frequency analysis and generate word clouds to visualise common terms  
 - Apply BERTopic to model topics across reviews and identify recurring themes  
 - Identify locations with the highest concentration of negative feedback  
-- Use BERTopic visualisations (intertopic maps, word scores, similarity heatmaps)  
 - Validate findings with LDA topic modelling  
 - Conduct emotion analysis to assess review sentiment and isolate anger-predicted reviews  
 - Apply large language models (LLMs) to extract concise, actionable operational insights  
