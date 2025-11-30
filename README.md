@@ -16,10 +16,10 @@ The analysis covers reviews from multiple platforms, consolidates location-level
 - Perform frequency analysis and generate word clouds to visualise common terms  
 - Apply BERTopic to model topics across reviews and identify recurring themes  
 - Identify locations with the highest concentration of negative feedback  
-- Use built-in BERTopic visualisations (intertopic maps, word scores, similarity heatmaps) [ADD IMAGE OF INTERTOPIC MAP]  
-- Conduct LDA topic modelling for validation [ADD IMAGE OF LDA INTERTOPIC MAP]  
+- Use built-in BERTopic visualisations (intertopic maps, word scores, similarity heatmaps)
+- Conduct LDA topic modelling for validation
 - Perform emotion analysis to determine review sentiment and focus on anger-predicted reviews  
-- Apply large language models (LLMs) to extract concise, actionable topics and recommendations [ADD IMAGE OF LLM SUMMARY]  
+- Apply large language models (LLMs) to extract concise, actionable topics and recommendations
 
 ---
 
@@ -33,23 +33,24 @@ The analysis covers reviews from multiple platforms, consolidates location-level
 
 ## Initial Data Investigation
 
-- **Frequency Analysis:**  
-  - Common themes across platforms: Equipment, Staff, Facilities, Membership, Classes  
-  [ADD IMAGE OF WORD CLOUD]  
-
-- **Negative Review Focus:**  
+- **Negative Review Frequency Analysis:**  
   - Isolated reviews with low ratings (<3) to identify critical feedback  
-  - Frequent negative terms: Staff, Equipment, Facilities, Membership, Access issues  
-  [ADD IMAGE OF NEGATIVE WORD CLOUD]  
+  - Frequent negative terms: Staff, Equipment, Machine, Membership, People
+
+<img width="395" height="218" alt="image" src="https://github.com/user-attachments/assets/dd38b127-b951-47fe-ae11-69f8368f540b" />
+
+<img width="395" height="218" alt="image" src="https://github.com/user-attachments/assets/ea6fd3e3-f727-4784-aafd-103b4a654d66" />
 
 **Insight:** Negative feedback is consistent across platforms, highlighting recurring operational concerns.
+
+<img width="452" height="242" alt="image" src="https://github.com/user-attachments/assets/6df7d74e-9d41-4760-b579-2b87a25603c6" />
 
 ---
 
 ## Topic Modelling with BERTopic
 
 - Merged reviews across platforms to ensure location-independent analysis  
-- Generated topic frequencies and visualisations [ADD IMAGE OF TOPIC FREQUENCY MAP]  
+- Generated topic frequencies and visualisations
 - Ten topics emerged:
   1. Cleanliness & Facilities – Hygiene complaints in showers, toilets, changing rooms  
   2. Buddy/Referral System – Referral programmes and friend account setup  
@@ -73,7 +74,8 @@ The analysis covers reviews from multiple platforms, consolidates location-level
 - BERTopic modelling on top 30 locations revealed:
   - **Dominant Topic (95.8%)**: Equipment, staff, and machine-related issues  
   - **Secondary Topic (4.2%)**: Parking and infrastructure complaints  
-  [ADD IMAGE OF TOP LOCATION TOPICS]  
+
+ <img width="452" height="122" alt="image" src="https://github.com/user-attachments/assets/06b82103-ca9c-4fec-924d-0e37c0e122f4" />
 
 **Insight:** Core dissatisfaction is consistent across high-complaint locations, while secondary issues vary by location.
 
@@ -87,38 +89,85 @@ The analysis covers reviews from multiple platforms, consolidates location-level
   - Environmental failures: Cold showers, hygiene, noise complaints  
   - Immediate disruptions: Unexpected closures, unavailable equipment  
   - Physical discomfort: Temperature and cleanliness issues  
-  [ADD IMAGE OF ANGER TOPIC CLUSTERS]  
+
+<img width="452" height="339" alt="image" src="https://github.com/user-attachments/assets/a89754c4-794f-41e9-baac-b32e54c965a5" />
+
 
 **Insight:** Most severe negative reactions are triggered by immediate environmental failures rather than systemic issues, emphasising the need for real-time facility management.
 
 ---
 
-## Large Language Model Analysis
+## Large Language Model Analysis (Prompt-Engineered Insights)
 
-- Used a small, efficient LLM to process reviews and extract concise topics  
-- Sampled reviews to create a comprehensive topic array  
-- BERTopic on LLM outputs reduced noise and clarified operational pain points  
-- Extracted actionable categories:
-  1. Equipment Scarcity – Availability constraints  
-  2. Staff Misconduct – Behavioural problems and security concerns  
-  3. Value Proposition – Pricing and membership complaints  
-  4. Facility Amenities – Showers, towels, accessibility  
-  5. Environmental Quality – Cleanliness and atmosphere concerns  
-  6. Health & Safety – Welfare and hygiene risks  
-  7. Facility Adequacy – Capacity and demographic-specific issues  
-  8. Maintenance Standards – Cleaning frequency and upkeep failures  
-  [ADD IMAGE OF LLM TOPIC EXTRACTION]  
+- Used a small, efficient LLM to process extracted topics and generate actionable business insights  
+- Applied prompt engineering to compress and group topic arrays into high-level recommendations [ADD IMAGE OF LLM INSIGHTS]  
+- Sample workflow:
+  - Extracted topic strings from reviews (`topic_string_array`)  
+  - Compressed topics via LLM with system prompt instructing: *“Group or compress the topics and return them as business insights for improvement”*  
+  - Generated numbered list of actionable insights for operational priorities  
 
-**Insight:** LLM-assisted modelling surfaces serious hidden issues such as staff misconduct and safety risks, enabling prioritised operational responses.
+**Key LLM-Generated Insights:**
+
+1. **Service Quality and Staff Behavior**  
+   - Train staff to improve professionalism and customer service  
+   - Address unprofessional behavior and ensure staff responsiveness  
+   - Implement conflict management and staff training programmes  
+
+2. **Facility Maintenance and Cleanliness**  
+   - Increase cleaning frequency and improve facility maintenance  
+   - Address hygiene issues, including locker and changing room upkeep  
+   - Ensure proper ventilation and air conditioning  
+
+3. **Equipment Quality and Maintenance**  
+   - Maintain and repair equipment regularly to prevent malfunctions  
+   - Ensure variety and availability of equipment  
+   - Improve equipment quality and ensure correct use  
+
+4. **Membership and Pricing**  
+   - Review membership options and pricing for value  
+   - Offer buddy programs and convenient payment methods  
+   - Address membership cancellations and upgrade processes  
+
+5. **Customer Experience and Communication**  
+   - Enhance communication and response times from customer service  
+   - Address billing and payment issues, including unexpected charges  
+   - Improve onboarding and clarify membership terms  
+
+6. **Facility Management and Safety**  
+   - Reduce overcrowding and manage equipment/space availability  
+   - Improve facility and equipment oversight, including locker rooms  
+   - Address security concerns and staff response to incidents  
+
+7. **Customer Satisfaction and Feedback**  
+   - Actively collect and act on customer feedback  
+   - Address recurring dissatisfaction with service quality  
+   - Implement a structured feedback system  
+
+8. **Health and Safety Concerns**  
+   - Address hygiene and environmental safety issues  
+   - Ensure supervision and safety measures, especially for vulnerable individuals  
+   - Provide support for mental health and substance-related concerns  
+
+9. **Facility Cleanliness and Maintenance**  
+   - Improve cleanliness of showers, restrooms, and changing rooms  
+   - Fix issues such as mold and general facility neglect  
+
+10. **Customer Service and Management**  
+    - Strengthen staff training and responsiveness  
+    - Improve overall customer management and satisfaction  
+
+**Insight:** Prompt-engineered LLM modelling surfaces nuanced, actionable recommendations, enabling prioritisation of operational improvements across service quality, facility management, equipment, and customer experience.
 
 ---
 
 ## Validation with LDA
 
 - Applied Gensim LDA to tokenised reviews  
-- Generated 10 topics and interactive intertopic maps [ADD IMAGE OF LDA VALIDATION MAP]  
+- Generated 10 topics and interactive intertopic maps
 - Confirmed BERTopic findings with clear thematic separation  
-- Top recurring terms: Equipment (~1400 mentions), Staff (~1200 mentions)  
+- Top recurring terms: Equipment (~1400 mentions), Staff (~1200 mentions)
+  
+<img width="3220" height="2480" alt="outputframe" src="https://github.com/user-attachments/assets/9f8e1404-1f3f-4a36-9dda-354345637ca4" />
 
 **Insight:** Dual-method approach strengthens confidence in core pain points and validates that equipment, staff, and facilities are central operational concerns.
 
