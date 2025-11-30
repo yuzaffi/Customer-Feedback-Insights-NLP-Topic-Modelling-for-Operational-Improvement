@@ -1,4 +1,4 @@
-# Customer-Feedback-Insights-NLP-Topic-Modelling-for-Operational-Improvement
+# 💬 Customer-Feedback-Insights-NLP-Topic-Modelling-for-Operational-Improvement
 
 ## Project Background
 
